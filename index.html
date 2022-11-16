@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Test 1</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="div1" id="div1">
+        <h1>Click and drag test!</h1>
+        <div id="box1"></div>
+        <div id="box2"></div>
+      </div>
+
+</body>
+
+<!-- Load jQuery --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+    var startX = 0;
+    var startY = 0;
+    var offsetX = 0;
+    var offsetY = 0;
+    var dragElement;
+    document.onmousedown = OnMouseDown;
+    document.onmouseup = OnMouseUp;
+
+    function OnMouseDown(event) {
+        document.onmousemove = OnMouseMove;
+        startX = event.clientX;
+        startY = event.clientY;
+        offsetX = document.getElementById('div1').offsetLeft;
+        offsetY = document.getElementById('div1').offsetTop;
+        dragElement = document.getElementById('div1');
+
+    }
+
+    function OnMouseMove(event) {
+        dragElement.style.left = (offsetX + event.clientX - startX) + 'px';
+        dragElement.style.top = (offsetY + event.clientY - startY) + 'px';
+    }
+
+    function OnMouseUp(event) {
+        document.onmousemove = null;
+        dragElement = null;
+    }
+</script>
+
+</html>

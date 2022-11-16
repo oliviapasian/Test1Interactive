@@ -1,0 +1,32 @@
+html{ 
+    background-color:rgb(243, 249, 211);
+    overflow: hidden;
+    cursor: grab;
+  }
+  
+.div1{
+    position:absolute;
+    height:500px;
+    width: 500px;
+    z-index: 1;
+}
+
+#box1{
+    width: 100px;
+    height: 200px;
+    border: 20px goldenrod solid;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 100px;
+    top: 300px;
+}
+
+#box2{
+    width: 400px;
+    height: 300px;
+    border: 20px goldenrod solid;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: -300px;
+    top: 600px;
+}
